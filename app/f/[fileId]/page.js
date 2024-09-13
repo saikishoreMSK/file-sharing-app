@@ -38,7 +38,7 @@ const FileView = ({params}) => {
 
   return (
     <div className='bg-gray-100 items-center justify-center flex flex-col gap-4 h-screen w-full'>
-        <Link href={'/'}>
+        <Link href={'https://file-sharing-site-seven.vercel.app/'}>
             <Image src={'/logo.svg'} width={150} height={100}/>
         </Link>
       <FileItem file={file}/>
