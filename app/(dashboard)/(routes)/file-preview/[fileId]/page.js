@@ -1,6 +1,6 @@
 "use client"
-import { app } from '@/firebaseConfig';
-import { getFirestore } from 'firebase/firestore';
+import { app } from './../../../../../firebaseConfig';
+import { getFirestore, updateDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { doc, getDoc } from "firebase/firestore";
 import Link from 'next/link';
@@ -12,7 +12,7 @@ const FilePreview = ({params}) => {
   const db = getFirestore(app);
   const [file,setFile] = useState();
   useEffect(()=>{
-      console.log(params.fileId)
+      console.log(params?.fileId)
       params?.fileId&&getFileInfo();
   },[])
   const getFileInfo =async()=>{
@@ -26,8 +26,11 @@ const FilePreview = ({params}) => {
       console.log("No such document!");
     }
   }
-  const onPasswordSave=(password)=>{
-
+  const onPasswordSave=async(password)=>{
+    const docRef = doc(db,"uploadedFile",params?.fileId);
+    await updateDoc(docRef,{
+      password:password
+    });
   }
   return (
     <div className='py-10 px-20'>

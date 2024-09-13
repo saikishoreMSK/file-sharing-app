@@ -11,19 +11,19 @@ function Header() {
       <nav aria-label="Global" className="hidden md:block">
         <ul className="flex items-center gap-6 text-sm">
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Home </a>
+            <a className="text-gray-500 transition hover:text-gray-500/75" href="/"> Home </a>
           </li>
 
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Upload </a>
+            <a className="text-gray-500 transition hover:text-gray-500/75" href="/upload"> Upload </a>
           </li>
 
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> About Us </a>
+            <a className="text-gray-500 transition hover:text-gray-500/75" href="/files"> Files </a>
           </li>
 
           <li>
-            <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> Contact Us </a>
+            <a className="text-gray-500 transition hover:text-gray-500/75" href="/upgrade"> Upgrade </a>
           </li>
 
         </ul>

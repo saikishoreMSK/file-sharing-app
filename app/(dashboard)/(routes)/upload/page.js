@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import UploadForm from './_components/UploadForm'
-import { app } from '@/firebaseConfig'
+import { app } from './../../../../firebaseConfig'
 import { doc, getFirestore, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useUser } from '@clerk/nextjs';
-import { generateRandomString } from '@/app/_utils/GenerateRandomString';
+import { generateRandomString } from './../../../_utils/GenerateRandomString';
 import { useRouter } from 'next/navigation';
  
 const Upload = () => {
@@ -46,7 +46,7 @@ const Upload = () => {
           userName: user.fullName,
           password: "",
           id: docId,
-          shortUrl: process.env.NEXT_PUBLIC_BASE_URL+ docId
+          shortUrl: process.env.NEXT_PUBLIC_BASE_URL+'f/'+ docId
         });
       }
   }
